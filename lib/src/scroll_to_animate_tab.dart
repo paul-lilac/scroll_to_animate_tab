@@ -56,7 +56,7 @@ class ScrollToAnimateTab extends StatefulWidget {
   final TabDecoration? inActiveTabDecoration;
 
   @override
-  _ScrollToAnimateTabState createState() => _ScrollToAnimateTabState();
+  State createState() => _ScrollToAnimateTabState();
 }
 
 class _ScrollToAnimateTabState extends State<ScrollToAnimateTab> {
@@ -126,7 +126,7 @@ class _ScrollToAnimateTabState extends State<ScrollToAnimateTab> {
                 ),
                 Flexible(
                   child: widget.tabs[index].body,
-                )
+                ),
               ],
             ),
           ),
@@ -173,7 +173,8 @@ class _ScrollToAnimateTabState extends State<ScrollToAnimateTab> {
     /// Target [ScrollView] is not attached to any views and/or has no listeners.
     if (positions.isEmpty) return;
 
-    /// Capture the index of the first [ItemPosition]. If the saved index is same
+    /// Capture the index of the first [ItemPosition].
+    /// If the saved index is same
     /// with the current one do nothing and return.
     final firstIndex =
         _bodyPositionsListener.itemPositions.value.elementAt(0).index;
